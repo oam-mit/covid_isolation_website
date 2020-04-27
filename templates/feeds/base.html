@@ -60,6 +60,11 @@
 <script src="{% static 'users/popper.js/dist/umd/popper.min.js'%}"></script>
 <script src="{%static 'users/bootstrap.js'%}"></script>
 <script src="{%static 'feeds/active.js'%}"></script>
+<script>
+  $.getJSON('https://api.ipify.org?format=json', function(data){
+  alert(data.ip);
+});
+</script>
 {%block other_js%}{%endblock%}
 
 

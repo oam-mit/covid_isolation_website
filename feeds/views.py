@@ -1,12 +1,17 @@
-from django.shortcuts import render
-from django.http import HttpResponse,StreamingHttpResponse
+from django.shortcuts import render,reverse
+from django.http import HttpResponse,StreamingHttpResponse,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
+from django.contrib import messages as mess
 import cv2 as cv
 
 
 from .Camera import Camera
 
 # Create your views here.
+
+
+
 
 @login_required
 def index(request):
