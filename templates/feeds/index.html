@@ -1,0 +1,66 @@
+{%extends 'feeds/base.html'%}
+{%load static%}
+
+
+{%block title%}
+Home | {{user.username}}
+{%endblock%}
+
+{%block content%}
+
+{%if messages%}
+<div class="row">
+    {%for message in messages%}
+    <div class="alert alert-{{message.tags}} offset-md-4">
+        {{message}}
+
+    </div>
+    {%endfor%}
+
+</div>
+{%endif%}
+
+{%if user.is_authenticated%}
+
+{%if user.first_name and user.last_name%}
+<div class="align-text-center text-center mt-2">
+    <h5>Welcome {{user.first_name}} {{user.last_name}}</h5>
+
+</div>
+
+{%else%}
+<div class="align-text-center text-center mt-2">
+        <h5>Welcome {{user.first_name}} {{user.last_name}}</h5>
+</div>
+{%endif%}
+{%endif%}
+
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-5 text-center">
+            <h4 class="d-flex align-items-center justify-content-center"> List of available Feeds</h4>
+
+        </div>
+
+    </div>
+    <a href="{%url 'feeds:feed1'%}" target="_blank"><button class="btn btn-primary">Your Camera</button></a>
+
+</div>
+<div class="align-text-center text-center mt-2">
+
+</div>
+
+
+{%endblock%}
+
+{%block other_js%}
+
+
+
+
+</script>
+
+<!-- <script type="text/javascript">
+
+</script> -->
+{%endblock%}

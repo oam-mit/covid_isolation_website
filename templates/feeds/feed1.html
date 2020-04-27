@@ -1,0 +1,17 @@
+{%extends 'feeds/base.html'%}
+{%block content%}
+<img id="feed1" src="{%url 'feeds:mask_detection'%}" width="50%" height="50%" class="mx-auto d-block">
+{%endblock%}
+
+{%block logout%}
+{%endblock%}
+
+{%block other_js%}
+<script>
+    document.getElementById("home").addEventListener('click',function(){
+        var image=document.getElementById("feed1").remove();
+        window.close();
+    });
+    
+</script>
+{%endblock%}
