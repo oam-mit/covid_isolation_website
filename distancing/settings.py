@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'feeds.apps.FeedsConfig',
+    'rest_framework',
     'crispy_forms',
 ]
 

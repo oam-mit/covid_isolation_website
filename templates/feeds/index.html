@@ -43,7 +43,9 @@ Home | {{user.username}}
         </div>
 
     </div>
-    <a href="{%url 'feeds:feed1'%}" target="_blank"><button class="btn btn-primary">Your Camera</button></a>
+    {%for feed in feeds%}
+    <a href="{%url 'feeds:feed' feed.slug%}" target="_blank"><button class="btn btn-primary">{{feed.name}}</button></a>
+    {%endfor%}
 
 </div>
 <div class="align-text-center text-center mt-2">

@@ -8,8 +8,8 @@ app_name='feeds'
 
 urlpatterns=[
     path("",views.index,name="index"),
-    path("feed1",views.feed1,name="feed1"),
+    path("feed/<slug:feed_slug>",views.feed,name="feed"),
 
     #cameras
-    path("camera",views.mask_detection,name="mask_detection")
+    path("camera/<slug:feed_slug>",views.mask_detection,name="mask_detection")
 ]

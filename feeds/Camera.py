@@ -11,7 +11,8 @@ from .utils.anchor_generator import generate_anchors
 from .utils.anchor_decode import decode_bbox
 from .utils.nms import single_class_non_max_suppression
 from .load_model.keras_loader import load_keras_model, keras_inference
-
+import os
+from distancing import settings
 try:
     model = load_keras_model('model/face_mask_detection.json', 'model/face_mask_detection.hdf5')
 
@@ -45,8 +46,13 @@ Face = (9,8)
 faces = []
 
 class Camera:
-    def __init__(self):
-        self.cam=cv2.VideoCapture(0)
+    def __init__(self,location):
+        if type(location) is type(1):
+            self.cam=cv2.VideoCapture(location)
+        elif "." in location:
+            self.cam=cv2.VideoCapture(location)
+        else:
+            self.cam=cv2.VideoCapture(os.path.join(settings.BASE_DIR,location))
         
     
     def turn_to_jpg(self,image):
