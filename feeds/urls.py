@@ -4,6 +4,7 @@ from django.conf import settings
 
 from . import views
 
+
 app_name='feeds'
 
 urlpatterns=[
@@ -11,5 +12,5 @@ urlpatterns=[
     path("feed/<slug:feed_slug>",views.feed,name="feed"),
 
     #cameras
-    path("camera/<slug:feed_slug>",views.mask_detection,name="mask_detection")
+    path("camera/<slug:feed_slug>",views.mask_detection,name="mask_detection"),
 ]

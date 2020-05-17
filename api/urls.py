@@ -10,5 +10,9 @@ from . import views
 app_name="api"
 
 urlpatterns=[
-    path("feeds",views.get_feeds,name="get_feeds")
+    path("feeds",views.get_feeds,name="get_feeds"),
+    
+    #Authentication
+    path("login",views.CustomLogin.as_view(),name="login"),
+    path("register",views.userRegistration,name="register"),
 ]

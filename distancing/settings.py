@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'feeds.apps.FeedsConfig',
     'rest_framework',
+    'rest_framework.authtoken',
     'crispy_forms',
 ]
 
@@ -70,6 +71,12 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
 
 WSGI_APPLICATION = 'distancing.wsgi.application'
 
