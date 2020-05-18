@@ -20,4 +20,4 @@ Replace auth_token by the authorization token obtained when you login
 
 install all the dependencies from requirement.txt and then run manage.py using fololwing command
 
-> python run manage.py --noreload --nothreading
+> python manage.py runserver --noreload --nothreading
